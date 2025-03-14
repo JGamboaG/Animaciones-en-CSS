@@ -118,6 +118,10 @@
             text-decoration: none;
         }
 
+        a:link{
+            color: #FFFFFF;
+        }
+
         a:visited{
             color: #FFFFFF;
         }
@@ -311,6 +315,10 @@
             font-size: 25px;
         }
 
+        a:link{
+            color: #FFFFFF;
+        }
+
         a:visited{
             color: #FFFFFF;
         }
@@ -408,6 +416,10 @@
             line-height: 1.5rem;
             padding-inline: 0.25rem;
             text-decoration: none;
+        }
+
+        a:link{
+            color: #FFFFFF;
         }
 
         a:visited{
@@ -601,6 +613,10 @@
         a{
             text-decoration: none;
             font-size: 25px;
+        }
+
+        a:link{
+            color: #FFFFFF;
         }
 
         a:visited{
