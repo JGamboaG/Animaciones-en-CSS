@@ -162,19 +162,6 @@
                     flex-basis: 100%;
                     height: 0;
                 }
-
-                .image{
-                    height: 100%;
-                    display: flex;
-
-                    img{
-                        background-color: #000000;
-                        height: 100%;
-                        overflow: hidden;
-                        aspect-ratio: 1/1;
-                        object-fit: contain;
-                    }
-                }
             }
         }
 
@@ -206,6 +193,45 @@
             height: 22rem;
             width: auto;
         }
+    }
+
+    .image{
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .image img{
+            background-color: #000000;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            aspect-ratio: 1/1;
+            object-fit: contain;
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+    
+    .image:hover img{
+        transform: scale(1.1);
+        filter: grayscale(100%);
+    }
+
+    .image .text{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #FFFFFF;
+        font-size: 14px;
+        font-weight: bold;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 10px 10px;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .image:hover .text{
+        opacity: 1;
     }
 
     section.contacto{
@@ -266,7 +292,7 @@
         align-items: center;
         color: #FFFFFF;
         border-top: 1px solid #495057;
-        padding-inline: 5rem;
+        padding-inline: 2rem;
 
         p{
             font-size: 12px;
@@ -294,39 +320,20 @@
         }
     }
 
-    
+    .evolucion{
+        width: 40px;
+        height: 84px;
+        background: url('../img/animation.png') no-repeat;
+        background-size: 200px 84px;
+        animation: evolucion 5s steps(5) infinite;
+        color: #FFFFFF;
+    }
+
+    @keyframes evolucion{
+        from {background-position: 0 0;}
+        to {background-position: -200px 0;}
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media screen and (min-width: 576px){
 
@@ -603,27 +610,19 @@
         a:hover{
             color: red;
         }
-
-
-
-        
     }
 
-    .evolucion {
-
-        width: 40px; /* Tamaño de cada frame */
-        height: 84px; /* Ajusta según la imagen */
+    .evolucion{
+        width: 40px;
+        height: 84px;
         background: url('../img/animation.png') no-repeat;
-        background-size: 200px 84px; /* Ajustar al tamaño del sprite sheet */
+        background-size: 200px 84px;
         animation: evolucion 5s steps(5) infinite;
         color: #FFFFFF;
-        
     }
 
-    @keyframes evolucion {
-        from { background-position: 0 0; }
-        to { background-position: -200px 0; }
+    @keyframes evolucion{
+        from {background-position: 0 0;}
+        to {background-position: -200px 0;}
     }
-
-
 }
