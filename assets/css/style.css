@@ -8,7 +8,7 @@
     body{
         min-height: 100vh;
         display: grid;
-        grid-template-rows: 2% auto 8% 2%;
+        grid-template-rows: 1.5% auto 4% 1%;
         grid-template-columns: 15% 85%;
         grid-template-areas: 
         'menu header'
@@ -66,7 +66,6 @@
             background-color: #000000;
         }
 
-
         input[type="checkbox"], .mdi-menu, .mdi-close{
             position: absolute;
             box-sizing: border-box;
@@ -103,14 +102,6 @@
             display: none;
         }
 
-
-
-
-
-
-
-
-
         a{
             height: 1.5rem;
             line-height: 1.5rem;
@@ -138,9 +129,10 @@
         border-style: solid;
         border-width: 1px 0px 0px 1px;
         padding-top: 2rem;
+        padding-bottom: 2rem;
+        gap: 2rem;
         display: grid;
-        grid-template-columns: auto;
-        grid-template-rows: auto auto auto auto;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         grid-template-areas: 
         'homo'
         'aust'
@@ -155,17 +147,13 @@
 
             .list-image{
                 display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                height: 15rem;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                width: 70%;
+                height: auto;
                 row-gap: 1rem;
-                column-gap: 2rem;
+                column-gap: 1rem;
                 justify-content: center;
-
-                .break{
-                    flex-basis: 100%;
-                    height: 0;
-                }
             }
         }
 
@@ -174,28 +162,24 @@
             font-size: 30px;
         }
 
+        .break{
+            display: none;
+        }
+
         .homo{
             grid-area: homo;
-            height: 137rem;
-            width: auto;
         }
 
         .aust{
             grid-area: aust;
-            height: 71rem;
-            width: auto;
         }
 
         .para{
             grid-area: para;
-            height: 38rem;
-            width: auto;
         }
 
         .ardi{
             grid-area: ardi;
-            height: 22rem;
-            width: auto;
         }
     }
 
@@ -246,6 +230,7 @@
         color: #FFFFFF;
         align-items: center;
         border-top: 1px solid #495057;
+        overflow: hidden;
 
         h3{
             font-size: 20px;
@@ -438,28 +423,31 @@
         border-style: solid;
         border-width: 1px 0px 0px 1px;
         padding-top: 2rem;
+        padding-bottom: 2rem;
+        gap: 2rem;
         display: grid;
-        grid-template-columns: auto;
+        grid-template-columns: 1fr;
         grid-template-rows: auto auto auto auto;
         grid-template-areas: 
         'homo'
         'aust'
         'para'
         'ardi';
+        align-items: start;
 
         .genero{
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 2rem;
+            gap: 1rem;
+            width: 100%;
 
             .list-image{
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
-                height: 15rem;
                 row-gap: 1rem;
-                column-gap: 2rem;
+                column-gap: 1rem;
                 justify-content: center;
 
                 .break{
@@ -467,40 +455,42 @@
                     height: 0;
                 }
             }
-        }
 
-        h3{
-            color: #444;
-            font-size: 30px;
+            h3{
+                color: #444;
+                font-size: 30px;
+            }
         }
 
         .homo{
             grid-area: homo;
-            height: 73rem;
-            width: auto;
         }
 
         .aust{
             grid-area: aust;
-            height: 40rem;
-            width: auto;
         }
 
         .para{
             grid-area: para;
-            height: 22rem;
-            width: auto;
         }
 
         .ardi{
             grid-area: ardi;
-            height: 22rem;
-            width: auto;
         }
     }
 
+    .homo, .aust, .para, .ardi {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        width: 100%;
+        height: auto;
+    }
+
     .image{
-        height: 100%;
+        width: 15rem;
+        height: auto;
         position: relative;
         overflow: hidden;
     }
@@ -545,7 +535,8 @@
         flex-direction: column;
         color: #FFFFFF;
         align-items: center;
-        border-top: 1px solid #495057;;
+        border-top: 1px solid #495057;
+        overflow: hidden;
 
         h3{
             font-size: 20px;
