@@ -19,7 +19,7 @@
 
     header{
         grid-area: header;
-        background-color: rgba(102, 0, 0, 100);
+        background-color: rgba(102, 0, 0, 1);
         color: #FFFFFF;
         padding-inline: 0rem;
         padding-block: 0rem;
@@ -44,13 +44,12 @@
     .menu-nav{
         grid-area: menu;
         position: relative;
-        background-color: rgba(102, 0, 0, 100);
+        background-color: rgba(102, 0, 0, 1);
         display: flex;
         flex-direction: column;
-        align-content: center;
-        gap: 3rem;
+        justify-items: center;
         color: #FFFFFF;
-        padding: 2rem;
+        overflow: visible;
             
         h2{
             display: none;
@@ -58,12 +57,19 @@
         
         .menu{
             list-style-type: none;
-            display: flex;
+            display: none;
+            width: 200%;
             flex-direction: column;
             gap: 1rem;
             align-items: flex-start;
             overflow: visible;
-            background-color: #000000;
+            background-color: rgba(31, 31, 31, 1);
+            padding: 1rem;
+            border-radius: 5px;
+            position: absolute;
+            z-index: 2;
+            left: 10px;
+            top: 100px;
         }
 
         input[type="checkbox"], .mdi-menu, .mdi-close{
@@ -71,8 +77,8 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            right: 0;
-            top: 0;
+            right: 20px;
+            top: 48px;
             width: 48px;
             height: 48px;
         }
@@ -80,18 +86,16 @@
         .mdi-menu, .mdi-close{
             font-size: 48px;
             pointer-events: none;
+            position: absolute;
+            cursor: pointer;
         }
 
         input[type="checkbox"] {
             opacity: 0;
         }
 
-        .menu {
-            display: none;
-        }
-
         input:checked ~ .menu {
-            display: block;
+            display: flex;
         }
 
         input:checked ~ .mdi-menu {
@@ -111,6 +115,10 @@
 
         a:link{
             color: #FFFFFF;
+        }
+
+        a:visited ~ .menu{
+            display: none;
         }
 
         a:visited{
@@ -346,11 +354,11 @@
         grid-area: header;
         background-color: rgba(102, 0, 0, 100);
         color: #FFFFFF;
-        padding-inline: 3rem;
+        padding-inline: 1rem;
         padding-block: 0.5rem;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         gap: 3rem;
         
 
@@ -370,7 +378,7 @@
 
     .menu-nav{
         grid-area: menu;
-        background-color: rgba(31, 31, 31, 100);
+        background-color: rgba(31, 31, 31, 1);
         display: flex;
         flex-direction: column;
         justify-content: start;
